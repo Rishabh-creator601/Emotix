@@ -1,0 +1,1 @@
+A yolo based application in react and yolo for emotion detection 
