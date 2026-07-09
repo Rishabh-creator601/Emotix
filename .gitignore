@@ -1,0 +1,20 @@
+# Python
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+
+# Ultralytics run weights — the canonical models live in Models/ instead
+runs/*/weights/
+
+# Pretrained base checkpoint (auto-downloaded on first run)
+yolo12n.pt
+
+# Machine-specific generated config (absolute paths) + dataset caches
+dataset/data_fixed.yaml
+dataset/**/*.cache
+
+# Scratch / logs
+scratch_nbconvert.log
+
+# Zip archive of the raw dataset export
+emotion detector.v2i.yolov12.zip
