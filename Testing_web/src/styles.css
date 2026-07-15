@@ -1,0 +1,225 @@
+:root {
+  color: #eef4f2;
+  background: #0b0d0f;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+.boot-screen {
+  align-items: center;
+  color: #eef4f2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 100vh;
+  text-align: center;
+}
+
+.boot-screen h1 {
+  font-size: 44px;
+  letter-spacing: 0;
+  margin: 0 0 10px;
+}
+
+.boot-screen p {
+  color: #9aa8a3;
+  margin: 0;
+}
+
+button {
+  border: 0;
+  border-radius: 6px;
+  background: #13c296;
+  color: #06100d;
+  cursor: pointer;
+  font-weight: 700;
+  min-height: 42px;
+  padding: 0 18px;
+}
+
+button:disabled {
+  background: #4a5754;
+  color: #bac4c1;
+  cursor: not-allowed;
+}
+
+.app-shell {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 320px;
+  gap: 24px;
+  min-height: 100vh;
+  padding: 24px;
+}
+
+.camera-panel,
+.results-panel {
+  min-width: 0;
+}
+
+.video-wrap {
+  align-items: center;
+  aspect-ratio: 16 / 9;
+  background: #12171a;
+  border: 1px solid #283136;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
+video,
+.overlay {
+  height: 100%;
+  inset: 0;
+  object-fit: contain;
+  position: absolute;
+  width: 100%;
+}
+
+.camera-off {
+  display: none;
+}
+
+.camera-on {
+  display: block;
+}
+
+.overlay {
+  pointer-events: none;
+}
+
+.empty-state {
+  align-items: center;
+  color: #9aa8a3;
+  display: flex;
+  flex-direction: column;
+  font-size: 18px;
+  gap: 12px;
+  padding: 24px;
+  position: relative;
+  text-align: center;
+  z-index: 2;
+}
+
+.empty-state h1 {
+  color: #eef4f2;
+  font-size: 44px;
+  letter-spacing: 0;
+  line-height: 1;
+  margin: 0;
+}
+
+.empty-state p {
+  margin: 0 0 4px;
+}
+
+.toolbar {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding-top: 16px;
+}
+
+.toggle {
+  align-items: center;
+  background: #161c20;
+  border: 1px solid #2e393f;
+  border-radius: 6px;
+  display: inline-flex;
+  gap: 8px;
+  min-height: 42px;
+  padding: 0 14px;
+}
+
+.status {
+  color: #b7c4c0;
+  margin-left: auto;
+}
+
+.api-pill {
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 700;
+  padding: 8px 12px;
+}
+
+.api-pill.online {
+  background: #133b32;
+  color: #82f2d2;
+}
+
+.api-pill.offline {
+  background: #3c2020;
+  color: #ffb4ab;
+}
+
+.results-panel {
+  background: #111518;
+  border: 1px solid #283136;
+  border-radius: 8px;
+  padding: 20px;
+}
+
+.results-panel h1 {
+  font-size: 32px;
+  letter-spacing: 0;
+  margin: 0;
+}
+
+.results-panel p {
+  color: #9aa8a3;
+  margin: 6px 0 22px;
+}
+
+.result-list {
+  display: grid;
+  gap: 10px;
+}
+
+.result-row,
+.result-empty {
+  background: #181f23;
+  border: 1px solid #2d383e;
+  border-radius: 8px;
+  padding: 14px;
+}
+
+.result-row {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  text-transform: capitalize;
+}
+
+.result-row strong {
+  color: #13c296;
+}
+
+.result-empty {
+  color: #9aa8a3;
+}
+
+@media (max-width: 860px) {
+  .app-shell {
+    grid-template-columns: 1fr;
+    padding: 14px;
+  }
+
+  .status {
+    flex-basis: 100%;
+    margin-left: 0;
+  }
+}
